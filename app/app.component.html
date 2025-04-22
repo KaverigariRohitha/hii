@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body  >
+      
+    
+    <nav class="navbar " style="background-color: mediumslateblue;">
+        <a href="/home" class="nav-brand text-white nav-link">
+             <img src="https://www.bing.com/th/id/OIP.csbDHXsm5Vu9fahy2Py98wHaHa?w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" >
+        
+         Home  <select class="bg-secondary">
+            <option>theme</option>
+            <option>light</option>
+            <option>dark</option>
+        </select>
+    </a>
+
+        <ul class="nav">
+        <li><a routerLink="/home" class="nav-link text-warning">home</a></li>
+        <li><a routerLink="/login" class="nav-link text-warning">login</a></li>
+        <li><a routerLink="/pizzas" class="nav-link text-warning">pizzas</a></li>
+        <!-- <li><a routerLink="/buypizza" class="nav-link text-warning">buypizza</a></li> -->
+        <li><a routerLink="/order" class="nav-link text-warning">order</a></li>
+        <li><a routerLink="/register" class="nav-link text-warning">register</a></li>
+        <li><a routerLink="/logout" class="nav-link text-warning">logout</a></li>
+        <li><input type="search" placeholder="search.."><button> search </button> </li>
+        </ul>
+        </nav>
+
+         <!-- <p> <b> <i> <h3 style="color:rgb(230, 17, 98)"> welocme to our pizza store..</h3></i></b></p>
+            <p> <b> <i> <h1 style="color:rgb(230, 17, 98) ">register/login now to place an order!!!</h1></i></b></p>
+            <div class="bg">    <br><br> -->
+    </body>
+    
+</html>
+<router-outlet></router-outlet> 

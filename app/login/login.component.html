@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bg">
+    <style>
+        .v{
+        
+            border: 3px solid green;
+        }
+        .i{
+            border:3px solid red;
+        }
+    </style>
+    <div style="width: 500px; margin-left: 300px;">
+    <form #f="ngForm" (ngSubmit)="validate(f.value)">
+        <br>
+        <br>
+        {{f.value |json}}<br>
+        <br>
+        <label><b>enter username</b></label><br>
+        <br>
+        <input type="text" required  pattern="[a-z]+" ngModel  name="uname" #u="ngModel" class="form-control"  [class.v]="u.valid && u.touched" [class.i]="u.invalid && u.touched"/>
+        <br>
+        <div style="background-color: yellow;color: red;">
+        <div *ngIf="u.errors?.['required']&& u.untouched">enter username</div>
+        <div *ngIf="u.errors?.['pattern']&& u.untouched">invalid patern enter only alphabets</div>
+        </div>
+        <br>
+        <br>
+        <label> <b>enter password</b></label>
+        <br>
+        <br>
+
+        <input type="text"   #p="ngModel" required pattern="[a-z0-9]+" minlength="5" ngModel   name="pwd" ngModel class="form-control"/>
+        <div style="background-color: yellow;color: red;">
+            <div *ngIf="p.errors?.['required']&& p.untouched">enter password</div>
+        
+        <div *ngIf="p.errors?.['pattern']&& p.untouched">invalid patern</div>
+        <div *ngIf="p.errors?.['minlength']&& p.untouched">enter minlength of 5 character</div>
+        </div>
+        <br>
+        <button type="submit"class="btn btn-success">Login</button>
+
+    </form>
+    </div>
+    <div class=" bg bg-danger">
+        {{err}}
+    </div>
+    </div>
+</body>
+</html>
